@@ -10,9 +10,9 @@ function start()
     }
   );
 
-  $('#bookmarks').bind( "click", function() { renderTitle('Bookmarks'); toggleActive('#bookmarks'); printBookmarks(); });
+  $('#bookmarks').bind( "click", function() { renderTitle('Bookmarks Bar'); toggleActive('#bookmarks'); printBookmarks(); });
   $('#other').bind( "click", function() { renderTitle('Other Bookmarks'); toggleActive('#other'); printBookmarks(); });
-  $('#devices').bind( "click", function() { renderTitle('Other Devices'); toggleActive('#devices'); printBookmarks(); });
+  $('#devices').bind( "click", function() { renderTitle('Mobile Bookmarks'); toggleActive('#devices'); printBookmarks(); });
 }
 
 function printBookmarks()

@@ -16,7 +16,9 @@ h2 { font-size: 1.3em; font-weight: normal; line-height: 1;}
 #navigation h2 {padding-left: 24px; color: #5B6064;}
 #navigation ul {list-style-type: none; padding: 0; color: #999; font-size: 9pt;}
 #navigation ul li {padding-left: 24px; line-height: 26px;}
-#navigation ul li.active {border-left: #333 solid 6px; padding-left: 18px; color: #333;}
+#navigation ul li a { color: #999; text-decoration: none;}
+#navigation ul li.active a { color: #333; }
+#navigation ul li.active {border-left: #333 solid 6px; padding-left: 18px; }
 #content { width: 51em; margin-left: 1em;}
 #content #title { border-bottom: #EAE9E9 solid 1px; color: #5B6064; padding-bottom: 13px; margin-bottom: 0px; }
 #content .toolbar { height: 900px; position: fixed; overflow: scroll; border-bottom: #EAE9E9 solid 1px; padding-top: 15px;}
