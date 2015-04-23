@@ -1,21 +1,44 @@
 //when window loads call function
-window.onload = printBookmarks;
-//function called on window load complete
+window.onload = start;
+
+function start()
+{
+  var bookmarksTree = chrome.bookmarks.getTree(
+    function(bookmarksTree)
+    {//make use of printTree function
+      $('#content .display').append(printTree( bookmarksTree[0].children[0].children));
+    }
+  );
+
+  $('#bookmarks').bind( "click", function() { renderTitle('Bookmarks'); toggleActive('#bookmarks'); printBookmarks(); });
+  $('#other').bind( "click", function() { renderTitle('Other Bookmarks'); toggleActive('#other'); printBookmarks(); });
+  $('#devices').bind( "click", function() { renderTitle('Other Devices'); toggleActive('#devices'); printBookmarks(); });
+}
+
 function printBookmarks()
 {// get bookmarks & other tree from chrome api and
 //append to DOM objects in new tab page
   var bookmarksTree = chrome.bookmarks.getTree(
     function(bookmarksTree)
     {//make use of printTree function
-      $('body div.toolbar').append( printTree( bookmarksTree[0].children[0].children ) );
-      $('body div.other').append( printTree( bookmarksTree[0].children[1].children ) );
+
+      if ($('#bookmarks').parent().attr('class') == 'active'){
+        $('#content .display').children().remove();
+        $('#content .display').append(printTree( bookmarksTree[0].children[0].children));
+      }else if ($('#other').parent().attr('class') == 'active'){
+        $('#content .display').children().remove();
+        $('#content .display').append(printTree( bookmarksTree[0].children[1].children));
+      }else if ($('#devices').parent().attr('class') == 'active'){
+        $('#content .display').children().remove();
+        $('#content .display').append(printTree( bookmarksTree[0].children[2].children));
+      }
+
+      // $('#content .display').append("Showing booksmarks");
+
+      // $('body div.toolbar').append( printTree( bookmarksTree[0].children[0].children ) );
+      // $('body div.other').append( printTree( bookmarksTree[0].children[1].children ) );
     }
   );
-
-  $('#bookmarks').bind( "click", function() { renderTitle('Bookmarks'); toggleActive('#bookmarks'); });
-  $('#other').bind( "click", function() { renderTitle('Other Bookmarks'); toggleActive('#other'); });
-  $('#devices').bind( "click", function() { renderTitle('Other Devices'); toggleActive('#devices');});
-
 }
 
 function toggleActive(node)
