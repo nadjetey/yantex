@@ -11,7 +11,19 @@ function printBookmarks()
       $('body div.other').append( printTree( bookmarksTree[0].children[1].children ) );
     }
   );
+
+  $('#bookmarks').bind( "click", function() { renderTitle('Bookmarks'); toggleActive('#bookmarks'); });
+  $('#other').bind( "click", function() { renderTitle('Other Bookmarks'); toggleActive('#other'); });
+  $('#devices').bind( "click", function() { renderTitle('Other Devices'); toggleActive('#devices');});
+
 }
+
+function toggleActive(node)
+{
+  $(node).parent().parent().children().removeClass("active");
+  $(node).parent().toggleClass("active");
+}
+
 //converts array parameter into HTML list
 function printTree(treeNodes)
 {
@@ -123,3 +135,7 @@ function saveEdit(e)
   $('li#edit' + e.data.node.id).remove();
 }
 
+function renderTitle(name)
+{
+  $('#content #title').text(name);
+}
