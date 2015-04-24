@@ -21,9 +21,9 @@ h2 { font-size: 1.3em; font-weight: normal; line-height: 1;}
 #navigation ul li.active {border-left: #333 solid 6px; padding-left: 18px; }
 #content { width: 51em; margin-left: 1em;}
 #content #title { border-bottom: #EAE9E9 solid 1px; color: #5B6064; padding-bottom: 13px; margin-bottom: 0px; }
-#content .toolbar { height: 900px; position: fixed; overflow: scroll; border-bottom: #EAE9E9 solid 1px; padding-top: 15px;}
+#content .display { height:70vh; width: 100vw; overflow-y: scroll; padding: 15px 0 60px;}
 ul { list-style-type: none; margin: 0; padding: 0; }
-ul li { clear: left; padding: .15em; }
+ul li { clear: left; padding: .15em; line-height: 22px;}
 ul li a i { color: #aaa; }
 ul li img { float: left; }
 
@@ -42,3 +42,6 @@ ul li.edit table tr td:last-child { width: 100%; }
 ul li.edit p.newTab { float: left; margin: .5em 1em 0 0; white-space: nowrap; }
 ul li.edit p.buttons { float: right; margin: .5em 0 0 0; white-space: nowrap; }
 ul li.edit p.buttons button:first-child { margin-right: 1em; }
+
+.display ul li a { color: #333; text-decoration: none;}
+.display ul li a .title { padding-left: 20px; }
