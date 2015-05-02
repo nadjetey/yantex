@@ -14,22 +14,21 @@ h2 { font-size: 1.3em; font-weight: normal; line-height: 1;}
 #navigation, #content {float: left;}
 #navigation {width: 11em; margin: 0;}
 #navigation h2 {padding-left: 24px; color: #5B6064;}
-#navigation ul {list-style-type: none; padding: 0; color: #999; font-size: 9pt;}
+#navigation ul {list-style-type: none; padding: 0; color: #999; font-size: 9pt; margin: 0;}
 #navigation ul li {padding-left: 24px; line-height: 26px;}
 #navigation ul li a { color: #999; text-decoration: none;}
 #navigation ul li.active a { color: #333; }
 #navigation ul li.active {border-left: #333 solid 6px; padding-left: 18px; }
-#content { width: 53em; margin-left: 1em;}
-#content #title { border-bottom: #EAE9E9 solid 1px; color: #5B6064; padding-bottom: 13px; margin-bottom: 0px; }
-#content .display { height:70vh; width: 60vw; overflow-y: scroll; padding: 15px 0 30px;}
-ul { list-style-type: none; margin: 0; padding: 0; }
+#content { width: 53em; }
+#content #title { border-bottom: #EAE9E9 solid 1px; color: #5B6064; padding-bottom: 13px; margin-bottom: 0px; margin-left: 1em;}
+#content .display { height:70vh; width: 60vw; overflow-y: scroll; padding: 15px 0 30px 25px; margin-left: 1em;}
+ul { list-style-type: none; margin: 0 0 0 1.4em; padding: 0; }
 ul li { clear: left; padding: .15em; line-height: 22px;}
-ul li:hover {background-color: rgba(153, 153, 153, 0.1);}
+/*ul li:hover {background-color: rgba(153, 153, 153, 0.1);}*/
 ul li a i { color: #aaa; }
-ul li img { float: left; }
-
+ul li img { float: left; margin-left: -20px; width: 20px; height: 20px;}
 ul li.folder a { cursor: default; }
-ul li.folder a span.arrow { float: left; display: block; width: 1em; color: #888; }
+ul li.folder a span.arrow { float: left; display: block; width: 1em; color: #888;  margin-left: -40px; font-size: 10pt;}
 
 ul li a.edit { font-size: 80%; color: #ABCDDB; margin-left: .5em; cursor: hand !important; line-height: 80%; opacity: 0; }
 ul li:hover a.edit { opacity: 1; }
@@ -45,5 +44,8 @@ ul li.edit p.buttons { float: right; margin: .5em 0 0 0; white-space: nowrap; }
 ul li.edit p.buttons button:first-child { margin-right: 1em; }
 
 .display ul li a { color: #333; text-decoration: none;}
-.display ul li a .title { padding-left: 10px; }
-.display ul > ul { padding-left: 30px;}
+.display ul li a:hover, .display ul li a:active { color: #999; text-decoration: underline;}
+/*.display ul li a .title { padding-left: 10px; }*/
+/*.display ul > ul { padding-left: 30px;}*/
+/*.link img { width: 16px; height: 16px; }*/
+.title { margin-left: 5px;}
