@@ -31,7 +31,7 @@ ul li.folder a { cursor: default; }
 /*ul li.folder a:-webkit-any-link { color: -webkit-link; text-decoration: underline; cursor: auto; }*/
 ul li.folder a span.arrow { float: left; display: block; width: 1em; color: #888;  margin-left: -40px; font-size: 10pt;}
 
-ul li a.edit, ul li a.openall { font-size: 80%; color: #ABCDDB; margin-left: .5em; cursor: hand !important; line-height: 80%; opacity: 0; }
+ul li a.edit, ul li a.openall { font-size: 80%; color: #ABCDDB; margin-left: .5em; line-height: 80%; opacity: 0; }
 ul li:hover a.edit, ul li:hover a.openall { opacity: 1; }
 ul li:hover a.edit:hover, ul li:hover a.openall:hover { text-decoration: underline; color: #57BEEB; }
 
