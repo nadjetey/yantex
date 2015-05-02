@@ -81,6 +81,7 @@ function printNode(node)
     : $('<li id="' + node.id + '" class="link"></li>').append('<a href="' + node.url + '" title="' + node.title + '" ' + ( localStorage.getItem('newTab' + node.id ) ? 'target="_blank"' : '' ) + '><img src="chrome://favicon/' + node.url + '" width="16px" height="16px" alt="" /><span class="title">' + ( node.title == '' ? '<i>' + node.url + '</i>' : node.title ) + '</span></a>');
 
   $(item).append( $('<a class="edit">edit</a>').bind('click', { node: node }, toggleEdit ) );
+  $(item).append( $('<a class="openall">open all</a>').bind('click', { node: node }, toggleOpenAll ) );
 
   return item;
 }
@@ -157,6 +158,8 @@ function saveEdit(e)
 
   $('li#edit' + e.data.node.id).remove();
 }
+
+function toggleOpenAll(e){}
 
 function renderTitle(name)
 {
