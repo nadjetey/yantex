@@ -24,6 +24,7 @@ h2 { font-size: 1.3em; font-weight: normal; line-height: 1;}
 #content .display { height:70vh; width: 60vw; overflow-y: scroll; padding: 15px 0 30px;}
 ul { list-style-type: none; margin: 0; padding: 0; }
 ul li { clear: left; padding: .15em; line-height: 22px;}
+ul li:hover {background-color: rgba(153, 153, 153, 0.1);}
 ul li a i { color: #aaa; }
 ul li img { float: left; }
 
@@ -44,4 +45,5 @@ ul li.edit p.buttons { float: right; margin: .5em 0 0 0; white-space: nowrap; }
 ul li.edit p.buttons button:first-child { margin-right: 1em; }
 
 .display ul li a { color: #333; text-decoration: none;}
-.display ul li a .title { padding-left: 20px; }
+.display ul li a .title { padding-left: 10px; }
+.display ul > ul { padding-left: 30px;}
