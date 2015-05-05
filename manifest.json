@@ -18,8 +18,7 @@
   "permissions": [
     "bookmarks",
     "chrome://favicon/",
-    "topSites",
-    "sessions"
+    "topSites"
   ],
   "content_scripts": [
     {

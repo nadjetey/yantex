@@ -1,45 +1,90 @@
 //when window loads call function
-window.onload = start;
+window.onload = bindActions;
 
-function start()
+function bindActions()
 {
-  var bookmarksTree = chrome.bookmarks.getTree(
-    function(bookmarksTree)
-    {//make use of printTree function
-      $('#content .display').append(printTree( bookmarksTree[0].children[0].children));
-    }
-  );
+  //default
+  renderTree(getTopSites());
 
-  $('#bookmarks').bind( "click", function() { renderTitle('Bookmarks Bar'); toggleActive('#bookmarks'); printBookmarks(); });
-  $('#other').bind( "click", function() { renderTitle('Other Bookmarks'); toggleActive('#other'); printBookmarks(); });
-  $('#devices').bind( "click", function() { renderTitle('Mobile Bookmarks'); toggleActive('#devices'); printBookmarks(); });
+  $('#topsites').bind( "click", function() {
+    renderTitle('Most visited pages');
+    toggleActive('#topsites');
+    renderPage();
+  });
+
+  $('#bookmarks').bind( "click", function() {
+    renderTitle('Bookmarks Bar');
+    toggleActive('#bookmarks');
+    renderPage();
+  });
+
+  $('#other').bind( "click", function() {
+    renderTitle('Other Bookmarks');
+    toggleActive('#other');
+    renderPage();
+  });
+
+  $('#devices').bind( "click", function() {
+    renderTitle('Mobile Bookmarks');
+    toggleActive('#devices');
+    renderPage();
+  });
 }
 
-function printBookmarks()
-{// get bookmarks & other tree from chrome api and
-//append to DOM objects in new tab page
-  var bookmarksTree = chrome.bookmarks.getTree(
-    function(bookmarksTree)
-    {//make use of printTree function
-
-      if ($('#bookmarks').parent().attr('class') == 'active'){
-        $('#content .display').children().remove();
-        $('#content .display').append(printTree( bookmarksTree[0].children[0].children));
-      }else if ($('#other').parent().attr('class') == 'active'){
-        $('#content .display').children().remove();
-        $('#content .display').append(printTree( bookmarksTree[0].children[1].children));
-      }else if ($('#devices').parent().attr('class') == 'active'){
-        $('#content .display').children().remove();
-        $('#content .display').append(printTree( bookmarksTree[0].children[2].children));
-      }
-
-      // $('#content .display').append("Showing booksmarks");
-
-      // $('body div.toolbar').append( printTree( bookmarksTree[0].children[0].children ) );
-      // $('body div.other').append( printTree( bookmarksTree[0].children[1].children ) );
-    }
-  );
+function getTopSites()
+{
+  var tree = chrome.topSites.get( function(tree) {
+    renderTree(tree);
+  });
 }
+
+function getBookmarks(type)
+{
+  var bookmarksTree = chrome.bookmarks.getTree( function(bookmarksTree) {
+    renderTree(bookmarksTree[0].children[type].children);
+  });
+}
+
+function renderPage()
+{
+  if ($('#bookmarks').parent().attr('class') == 'active'){
+    renderTree( getBookmarks(0) );
+  }else if ($('#other').parent().attr('class') == 'active'){
+    renderTree( getBookmarks(1) );
+  }else if ($('#devices').parent().attr('class') == 'active'){
+    renderTree( getBookmarks(2) );
+  }else if ($('#topsites').parent().attr('class') == 'active'){
+    renderTree(getTopSites());
+  }
+}
+
+function renderTree(tree)
+{
+  $('#content .display').children().remove();
+  $('#content .display').append(printTree( tree ));
+}
+
+// function printBookmarks()
+// {
+//   var bookmarksTree = chrome.bookmarks.getTree(
+//     function(bookmarksTree)
+//     {
+//       if ($('#bookmarks').parent().attr('class') == 'active'){
+//         $('#content .display').children().remove();
+//         $('#content .display').append(printTree( bookmarksTree[0].children[0].children));
+//       }else if ($('#other').parent().attr('class') == 'active'){
+//         $('#content .display').children().remove();
+//         $('#content .display').append(printTree( bookmarksTree[0].children[1].children));
+//       }else if ($('#devices').parent().attr('class') == 'active'){
+//         $('#content .display').children().remove();
+//         $('#content .display').append(printTree( bookmarksTree[0].children[2].children));
+//       }else if ($('#topsites').parent().attr('class') == 'active'){
+//         $('#content .display').children().remove();
+//         $('#content .display').append(printTree( getTopSites() ));
+//       }
+//     }
+//   );
+// }
 
 function toggleActive(node)
 {
@@ -81,7 +126,9 @@ function printNode(node)
     : $('<li id="' + node.id + '" class="link"></li>').append('<a href="' + node.url + '" title="' + node.title + '" ' + ( localStorage.getItem('newTab' + node.id ) ? 'target="_blank"' : '' ) + '><img src="chrome://favicon/' + node.url + '" width="16px" height="16px" alt="" /><span class="title">' + ( node.title == '' ? '<i>' + node.url + '</i>' : node.title ) + '</span></a>');
 
   $(item).append( $('<a class="edit">edit</a>').bind('click', { node: node }, toggleEdit ) );
-  $(item).append( $('<a class="openall">open all</a>').bind('click', { node: node }, toggleOpenAll ) );
+  if (node.children != null) {
+    $(item).append( $('<a class="openall">open all</a>').bind('click', { node: node }, toggleOpenAll ) );
+  }
 
   return item;
 }
