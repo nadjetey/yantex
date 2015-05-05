@@ -7,7 +7,7 @@ function bindActions()
   renderTree(getTopSites());
 
   $('#topsites').bind( "click", function() {
-    renderTitle('Most visited pages');
+    renderTitle('Most Visited');
     toggleActive('#topsites');
     renderPage();
   });
