@@ -122,8 +122,8 @@ function printTree(treeNodes)
 //style item with arrow and folder icon
 function printNode(node)
 {
-  var item = (node.children) ? $('<li id="' + node.id + '" class="folder"></li>').append( $('<a><span class="arrow">' + ( localStorage.getItem('folder' + node.id ) == 'show' ? '&#x25bc;' : '&#x25b6;' ) + '</span><img src="/icons/folder.png" width="16px" height="16px" alt="" /><span class="title">' + node.title + ' (' + node.children.length +') ' + '</span></a>').bind('click', { id: node.id },  toggleFolder ) )
-    : $('<li id="' + node.id + '" class="link"></li>').append('<a href="' + node.url + '" title="' + node.title + '" ' + ( localStorage.getItem('newTab' + node.id ) ? 'target="_blank"' : '' ) + '><img src="chrome://favicon/' + node.url + '" width="16px" height="16px" alt="" /><span class="title">' + ( node.title == '' ? '<i>' + node.url + '</i>' : node.title ) + '</span></a>');
+  var item = (node.children) ? $('<li id="' + node.id + '" class="folder"></li>').append( $('<a><span class="arrow">' + ( localStorage.getItem('folder' + node.id ) == 'show' ? '&#x25bc;' : '&#x25b6;' ) + '</span><img src="/icons/folder.png" alt="" /><span class="title">' + node.title + ' (' + node.children.length +') ' + '</span></a>').bind('click', { id: node.id },  toggleFolder ) )
+    : $('<li id="' + node.id + '" class="link"></li>').append('<a href="' + node.url + '" title="' + node.title + '" ' + ( localStorage.getItem('newTab' + node.id ) ? 'target="_blank"' : '' ) + '><img src="chrome://favicon/' + node.url + '" alt="" /><span class="title">' + ( node.title == '' ? '<i>' + node.url + '</i>' : node.title ) + '</span></a>');
 
   $(item).append( $('<a class="edit">edit</a>').bind('click', { node: node }, toggleEdit ) );
   if (node.children != null) {
