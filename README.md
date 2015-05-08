@@ -1,10 +1,10 @@
-Yantex - Yet Another New Tab Extension (Chrome extension)
+Yantex - Yet Another New Tab Extension
 ==============
 
 Yet Another New Tab Extension for Chrome browser that triggers the convenient display of bookmarks when a blank new tab is opened.
 
 ## Screenshot
-![screenshot](https://raw.github.com/nadjetey/yantex/master/screenshot/yantex.png)
+![screenshot](https://raw.github.com/nadjetey/yantex/blob/master/screenshot/yantex.png)
 
 ## Installation & Usage
 1 > [Download](https://github.com/nadjetey/yantex/archive/master.zip) package
