@@ -1,13 +1,3 @@
-/*
-div.clearer { visibility: hidden; display: block; height: 0; content: "."; clear: both; }
-
-a { text-decoration: none; color: #333; }
-a:hover { text-decoration: underline; }
-
-div.toolbar, div.other { float: left; }
-div.toolbar { width: 35%; margin-right: 5%; }
-div.other { width: 50%; margin-right: 10%; }
-*/
 body {margin-left: 0;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 10.5pt; line-height: 130%;}
 h2 { font-size: 1.3em; font-weight: normal; line-height: 1;}
 #container {margin: 0;width: 64em;}
@@ -25,17 +15,13 @@ h2 { font-size: 1.3em; font-weight: normal; line-height: 1;}
 #content .display .folder { padding-left: 25px;}
 ul { list-style-type: none; margin: 0 0 0 1.4em; padding: 0; }
 ul li { clear: left; padding: .25em;}
-/*ul li:hover {background-color: rgba(153, 153, 153, 0.1);}*/
 ul li a i { color: #aaa; }
 ul li img { float: left; margin-left: -20px; width: 20px; height: 20px;}
 ul li.folder a { cursor: default; }
-/*ul li.folder a:-webkit-any-link { color: -webkit-link; text-decoration: underline; cursor: auto; }*/
 ul li.folder a span.arrow { float: left; display: block; width: 1em; color: #888;  margin-left: -40px; font-size: 10pt;}
-
 ul li a.edit, ul li a.openall { font-size: 80%; color: #ABCDDB; margin-left: .5em; line-height: 80%; opacity: 0; }
 ul li:hover a.edit, ul li:hover a.openall { opacity: 1; }
 ul li:hover a.edit:hover, ul li:hover a.openall:hover { text-decoration: underline; color: #57BEEB; }
-
 ul li.edit { margin-bottom: .5em; }
 ul li.edit table { border-spacing: 0; width: 100%; font-size: 10.5pt; }
 ul li.edit table tr td input[type=text] { width: 100%; }
@@ -44,10 +30,7 @@ ul li.edit table tr td:last-child { width: 100%; }
 ul li.edit p.newTab { float: left; margin: .5em 1em 0 0; white-space: nowrap; }
 ul li.edit p.buttons { float: right; margin: .5em 0 0 0; white-space: nowrap; }
 ul li.edit p.buttons button:first-child { margin-right: 1em; }
-
 .display ul li a { color: #333; text-decoration: none;}
 .display ul li a:hover, .display ul li a:active { color: #999; text-decoration: underline; cursor: pointer;}
-/*.display ul li a .title { padding-left: 10px; }*/
-/*.display ul > ul { padding-left: 30px;}*/
 .link img { width: 17px; height: 17px; }
 .title { margin-left: 5px;}
