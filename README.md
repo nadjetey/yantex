@@ -7,8 +7,7 @@ Yantex - Yet Another New Tab Extension
 ![yantex](https://raw.github.com/nadjetey/yantex/master/screenshots/yantex.png)
 
 ## Installation & Usage
-1 > [Download](https://github.com/nadjetey/yantex/blob/master/yantex.crx?raw=true) package
-
+1 > [Download](https://github.com/nadjetey/yantex/blob/master/yantex.crx?raw=true) package <br />
 2 > Run yantex.crx file to install in Chrome extensions
 
 ## Copyright & License
