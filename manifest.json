@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "description": "Chrome extension that triggers the convenient display of chrome
    bookmarks when a blank new tab is opened.",
-  "homepage_url": "http://nadjetey.github.io/",
+  "homepage_url": "http://nadjetey.github.io/2015/05/yantex/",
   "incognito": "split",
   "icons": {
     "16": "icons/icon16.png",
