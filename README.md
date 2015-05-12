@@ -10,7 +10,7 @@ Yet Another New Tab Extension for Chrome browser that triggers the convenient di
 
 ## Installation & Usage
 1 > [Download](https://github.com/nadjetey/yantex/blob/master/yantex.crx?raw=true) package
-2 > Run yantex.crx to install in Chrome extensions
+2 > Run yantex.crx file to install in Chrome extensions
 
 ## Copyright & License
 The MIT License (MIT), Copyright (c) 2014 Nii Adjetey Sowah. [Read full document.](LICENSE)
