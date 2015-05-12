@@ -7,7 +7,7 @@ Yet Another New Tab Extension for Chrome browser that triggers the convenient di
 ![yantex](https://raw.github.com/nadjetey/yantex/master/screenshots/yantex.png)
 
 ## Installation & Usage
-1 > [Download]() package
+1 > [Download](yantex.crx) package
 
 ## Copyright & License
 The MIT License (MIT), Copyright (c) 2014 Nii Adjetey Sowah. [Read full document.](LICENSE)
