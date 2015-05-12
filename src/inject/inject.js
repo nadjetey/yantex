@@ -1,13 +1,10 @@
-//when window loads call function
 window.onload = bindActions;
 
 function bindActions()
 {
-  //default
   renderTree(getTopSites());
 
   $('#topsites').bind( "click", function() {
-
     renderTitle('Most Visited');
     toggleActive('#topsites');
     renderPage();
@@ -71,7 +68,6 @@ function toggleActive(node)
   $(node).parent().toggleClass("active");
 }
 
-//converts array parameter into HTML list
 function printTree(treeNodes)
 {
   var list = $('<ul></ul>');
@@ -81,24 +77,20 @@ function printTree(treeNodes)
   {
     if (treeNodes[i].children)
     {
-      //get parent nodes, make of printNode function
       $(list).append( printNode(treeNodes[i]) );
-      //get children of parent node and style with folder icon
       item = printTree( treeNodes[i].children );
       $(item).attr('id', 'folder' + treeNodes[i].id );
-      //hide all children
       if (localStorage.getItem( 'folder' + treeNodes[i].id ) == null || localStorage.getItem( 'folder' + treeNodes[i].id ) == 'hide') $(item).hide();
 
     } else {
       item = printNode( treeNodes[i] );
     }
-    //append result to HTML list
     $(list).append(item);
   }
 
   return list;
 }
-//style item with arrow and folder icon
+
 function printNode(node)
 {
   var item = (node.children) ? $('<li id="' + node.id + '" class="folder"></li>').append( $('<a><span class="arrow">' + ( localStorage.getItem('folder' + node.id ) == 'show' ? '&#x25bc;' : '&#x25b6;' ) + '</span><img src="/icons/folder.png" alt="" /><span class="title">' + node.title + ' (' + node.children.length +') ' + '</span></a>').bind('click', { id: node.id },  toggleFolder ) )
@@ -179,7 +171,6 @@ function saveEdit(e)
   }
 
   chrome.bookmarks.update(e.data.node.id, changes);
-
   localStorage.setItem('newTab' + e.data.node.id, $('li#edit' + e.data.node.id + ' input[type=checkbox]').attr('checked') );
 
   $('li#edit' + e.data.node.id).remove();
