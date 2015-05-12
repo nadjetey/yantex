@@ -1,4 +1,6 @@
-![yantex](https://raw.github.com/nadjetey/yantex/master/icons/icon48.png)Yantex - Yet Another New Tab Extension
+![yantex](https://raw.github.com/nadjetey/yantex/master/icons/icon48.png)
+=============
+Yantex - Yet Another New Tab Extension
 ==============
 
 Yet Another New Tab Extension for Chrome browser that triggers the convenient display of bookmarks when a blank new tab is opened.
@@ -7,7 +9,8 @@ Yet Another New Tab Extension for Chrome browser that triggers the convenient di
 ![yantex](https://raw.github.com/nadjetey/yantex/master/screenshots/yantex.png)
 
 ## Installation & Usage
-1 > [Download](yantex.crx) package
+1 > [Download](https://github.com/nadjetey/yantex/blob/master/yantex.crx?raw=true) package
+2 > Run yantex.crx to install in Chrome extensions
 
 ## Copyright & License
 The MIT License (MIT), Copyright (c) 2014 Nii Adjetey Sowah. [Read full document.](LICENSE)
