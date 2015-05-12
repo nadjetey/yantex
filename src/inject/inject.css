@@ -32,5 +32,9 @@ ul li.edit p.buttons { float: right; margin: .5em 0 0 0; white-space: nowrap; }
 ul li.edit p.buttons button:first-child { margin-right: 1em; }
 .display ul li a { color: #333; text-decoration: none;}
 .display ul li a:hover, .display ul li a:active { color: #999; text-decoration: underline; cursor: pointer;}
+.display ul #undefined:hover a.edit, ul #undefined:hover a.openall {
+  opacity: 0;
+  display: none;
+}
 .link img { width: 17px; height: 17px; }
 .title { margin-left: 5px;}

@@ -7,6 +7,7 @@ function bindActions()
   renderTree(getTopSites());
 
   $('#topsites').bind( "click", function() {
+
     renderTitle('Most Visited');
     toggleActive('#topsites');
     renderPage();
@@ -63,28 +64,6 @@ function renderTree(tree)
   $('#content .display').children().remove();
   $('#content .display').append(printTree( tree ));
 }
-
-// function printBookmarks()
-// {
-//   var bookmarksTree = chrome.bookmarks.getTree(
-//     function(bookmarksTree)
-//     {
-//       if ($('#bookmarks').parent().attr('class') == 'active'){
-//         $('#content .display').children().remove();
-//         $('#content .display').append(printTree( bookmarksTree[0].children[0].children));
-//       }else if ($('#other').parent().attr('class') == 'active'){
-//         $('#content .display').children().remove();
-//         $('#content .display').append(printTree( bookmarksTree[0].children[1].children));
-//       }else if ($('#devices').parent().attr('class') == 'active'){
-//         $('#content .display').children().remove();
-//         $('#content .display').append(printTree( bookmarksTree[0].children[2].children));
-//       }else if ($('#topsites').parent().attr('class') == 'active'){
-//         $('#content .display').children().remove();
-//         $('#content .display').append(printTree( getTopSites() ));
-//       }
-//     }
-//   );
-// }
 
 function toggleActive(node)
 {
@@ -206,7 +185,12 @@ function saveEdit(e)
   $('li#edit' + e.data.node.id).remove();
 }
 
-function toggleOpenAll(e){}
+function toggleOpenAll(e){
+  var links = e.data.node.children;
+  $.each(links, function(index, node){
+    window.open(node.url, '_blank');
+  });
+}
 
 function renderTitle(name)
 {
