@@ -1,4 +1,4 @@
-Yantex - Yet Another New Tab Extension
+![yantex](https://raw.github.com/nadjetey/yantex/master/icons/icon48.png)Yantex - Yet Another New Tab Extension
 ==============
 
 Yet Another New Tab Extension for Chrome browser that triggers the convenient display of bookmarks when a blank new tab is opened.
